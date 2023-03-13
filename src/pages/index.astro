@@ -3,22 +3,17 @@ import BaseLayout from "../layouts/BaseLayout.astro";
 import HorizontalCard from "../components/HorizontalCard.astro";
 import { getCollection } from "astro:content";
 
-const posts = (await getCollection('blog')).sort(
-  (a, b) => b.data.pubDate.valueOf() - a.data.pubDate.valueOf()
-);
-
-const last_posts = posts.slice(0, 3);
 ---
 
 <BaseLayout>
 
     <div class="pb-12 mt-5">
       <div class="text-xl py-1">Hey there 👋</div>
-      <div class="text-5xl font-bold">I'm Manuel Ernesto</div>
-      <div class="text-3xl py-3 font-bold">Software Engineer and Entrepreneur</div>
+      <div class="text-5xl font-bold">I'm Srinidharan S</div>
+      <div class="text-3xl py-3 font-bold">UI/UX Designer & Gamer</div>
       <div class="py-2">
         <text class="text-lg">
-          I made this template for everyone who needs to create a personal website easily and quickly. This template includes Project Section, CV Section, Store, Paginated Blog, RSS Feed, SEO Friendly, Responsive Desing and 29 Visual themes. I hope you find it useful!
+          A curious student with a passion for design. With skills in UI/UX design, 3D modeling, and Web design. Xploring new creative avenues to bring ideas to life.
           </text
         >
       </div>
@@ -33,44 +28,27 @@ const last_posts = posts.slice(0, 3);
     </div>
 
     <HorizontalCard
-      title="Demo Project 1"
-      img="/post_img.webp"
-      desc="Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua."
-      url="#"
-      badge="NEW"
+      title="Vinyl"
+      img="/vinyl_thumbnail.png"
+      desc="The vinyl mobile app was created to make it easier to listen to music both online and offline."
+      url="https://www.behance.net/gallery/165351931/Vinyl-Music-Player-App"
+      badge="Figma"
     />
     <div class="divider my-0"></div>
     <HorizontalCard
-    title="Demo Project 2"
-    img="/post_img.webp"
-    desc="Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua."
-    url="#"
+    title="Rune Sword"
+    img="/sword_thumbnail.png"
+    desc="A determined man walks towards a sword stuck in a rock"
+    url="https://youtu.be/dvXl5PM82Hc"
+    badge="Blender"
   />
     <div class="divider my-0"></div>
     <HorizontalCard
-    title="Demo Project 3"
-    img="/post_img.webp"
-    desc="Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua."
-    url="#"
-    badge="FOSS"
+    title="Insect Catch Game"
+    img="/Game_thumbnail.PNG"
+    desc="In the infinite insect catch game, catch as many insects as possible using tap controls. The insects get faster and trickier to catch as you progress. "
+    url="https://srinidharan.github.io/50-Projects-50-Days/Day-50/index.html"
+    badge="Javascript"
   />
-
-
-    <div>
-      <div class="text-3xl w-full font-bold mb-5 mt-10">Latest from blog</div>
-    </div>
-
-    {
-      last_posts.map((post) => (
-        <HorizontalCard
-          title={post.data.title}
-          img={post.data.heroImage}
-          desc={post.data.description}
-          url={"/blog/" + post.slug}
-          target="_self"
-        />
-        <div class="divider my-0"></div>
-      ))
-    }
 
 </BaseLayout>
